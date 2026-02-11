@@ -4,9 +4,9 @@ After=graphical-session.target
 
 [Service]
 Type=simple
-# %h expands to the user's home directory at runtime.
-# Adjust the path after %h if you installed the scripts elsewhere.
-ExecStart=%h/deskflow-watchdog/start-deskflow-watchdog.sh
+# Default install location is ~/.local/share/deskflow-watchdog.
+# If installed to a different prefix (e.g. /usr/local), update this path.
+ExecStart=%h/.local/share/deskflow-watchdog/start-deskflow-watchdog.sh
 Restart=on-failure
 RestartSec=30
 Environment="DISPLAY=:0"
